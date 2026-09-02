@@ -20,7 +20,7 @@ namespace Player
         private float _chargeStartTime;
         private float _playerScaleAtChargeStart;
 
-        public bool IsCharging { get => _isCharging; set => _isCharging = value; }
+        public bool IsCharging { get => _isCharging; private set => _isCharging = value; }
         public bool CanCharge { get => _canCharge; set => _canCharge = value; }
 
         private void Update()

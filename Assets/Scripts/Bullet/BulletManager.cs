@@ -34,14 +34,11 @@ namespace Bullet
         {
             _charge = 0f;
 
-            if (_mockBullet != null)
-            {
-                _mockBullet.SetActive(true);
-                _mockBullet.transform.localScale = Vector3.one * _mockBulletBaseScale;
-            }
+            _mockBullet.SetActive(true);
+            _mockBullet.transform.localScale = Vector3.one * _mockBulletBaseScale;
         }
 
-        public void UpdateCharge(float charge)
+        private void UpdateCharge(float charge)
         {
             float scale = _mockBulletBaseScale + charge * _mockBulletScalePerCharge;
             _mockBullet.transform.localScale = Vector3.one * scale;
@@ -51,10 +48,7 @@ namespace Bullet
         {
             Vector3 spawnPosition = _mockBullet.transform.position;
 
-            if (_mockBullet != null)
-            {
-                _mockBullet.SetActive(false);
-            }
+            _mockBullet.SetActive(false);
 
             if (_bulletPrefab == null)
             {
